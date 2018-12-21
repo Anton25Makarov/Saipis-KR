@@ -1,0 +1,293 @@
+body {
+    color: #fff;
+    background-origin: border-box;
+    background: url(/resources/image/background.jpg) top left fixed;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 17pt;
+    font-family: Ostrich-regular;
+    display: inline;
+}
+
+a:link, a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFF00;
+}
+
+#toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    background-color: #FFFF00;
+    color: black;
+}
+
+header, footer {
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    background-color: #013369;
+    box-shadow: inset -2px -1px #FFFF00;
+}
+
+header div#logo {
+    margin: 5px;
+}
+
+nav ul li {
+    font-size: 23pt;
+    padding-right: 30px;
+}
+
+div.error-wrapper {
+    text-align: center;
+    width: 420px;
+}
+
+div.error, div.invalid {
+    color: #c10000;
+    font-family: Arial;
+}
+
+@font-face {
+    font-family: Ostrich-regular;
+    src: url(/resources/fonts/OstrichSans-Black.otf);
+}
+
+span#user {
+    padding: 20px;
+    font-size: 13pt;
+    font-family: Arial;
+}
+
+header div#auth-section {
+    position: absolute;
+    left: 79%;
+}
+
+header div#auth-section ul#auth li + li:before {
+    content: "| ";
+    color: #fff;
+}
+
+form.visible-form {
+    position: relative;
+    left: -100px;
+}
+
+form .field {
+    clear: both;
+    text-align: right;
+    line-height: 27px;
+    font-family: Arial;
+}
+
+form label {
+    float: left;
+    padding-right: 10px;
+    font-size: 11pt;
+}
+
+input[type='text'], input[type='password'] {
+    font-size: 11pt;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px
+}
+
+form button, input[type='submit'] {
+    background-color: #58595B;
+    border-style: none;
+    margin: 2px 10px 0 10px;
+    border-radius: 5px;
+    font-size: 11pt;
+}
+
+ul.dropdown {
+    display: none;
+    position: absolute;
+    margin-top: 15px;
+    background: #1A1A1A;
+    min-width: 160px;
+    border-radius: 0 0 2px 2px;
+}
+
+ul.dropdown li a {
+    font-size: 13pt;
+    padding: 0 1em;
+    font-family: Arial;
+    display: block;
+}
+
+div#content {
+    display: flex;
+    align-content: center;
+}
+
+article#main-article {
+    margin: 70px 20px 70px 70px;
+    padding: 0 40px;
+    width: 800px;
+    height: auto;
+    border-radius: 10px;
+    background: #1A1A1A;
+    box-shadow: inset 0 2px 2px #FFFF00;
+}
+
+div#article-content-wrapper h2 {
+    color: #FFFF00;
+    font-size: 25pt;
+    font-weight: 600;
+}
+
+div#article-content-wrapper h3 {
+    color: #FFFF00;
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+div#article-content-wrapper p {
+    padding: 0 0 30px 10px;
+    font-size: 13pt;
+    font-family: Arial;
+}
+
+article#main-article #video {
+    margin: 0 30px 20px 0;
+    float: left;
+}
+
+aside#aside-part {
+    margin: 70px 70px 70px 20px;
+    padding: 0 40px;
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    background: #1A1A1A;
+    box-shadow: inset 0 2px 2px #FFFF00;
+    text-align: center;
+}
+
+div.article {
+    margin: 15px 0;
+    font-size: 11pt;
+    font-family: Arial;
+}
+
+img.article-image {
+    margin-bottom: 10px;
+}
+
+div#list-wrapper {
+    margin: 70px 55px;
+    padding: 30px;
+    width: 85%;
+    height: auto;
+    border-radius: 10px;
+    background: #1A1A1A;
+    box-shadow: inset 0 2px 2px #FFFF00;
+    display: flex;
+    justify-content: space-around;
+}
+
+div#list-wrapper caption {
+    font-size: 25pt;
+    color: #FFFF00;
+}
+
+div#list-wrapper table td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 30px;
+    font-size: 14pt;
+    font-family: Arial;
+}
+
+div#list-wrapper.players table th {
+    padding: 20px 10px;
+    font-size: 18pt;
+    font-family: Arial;
+}
+
+div#list-wrapper.players table td {
+    padding: 8px 30px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #161616;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12pt;
+    font-family: Arial;
+}
+
+div#history-wrapper {
+    margin: 70px 55px;
+    padding: 30px;
+    width: 85%;
+    height: auto;
+    border-radius: 10px;
+    background: #1A1A1A;
+    box-shadow: inset 0 2px 2px #FFFF00;
+}
+
+div#history-wrapper #history-image {
+    margin: 0 30px 20px 0;
+    float: left;
+}
+
+div#history-wrapper h2 {
+    font-size: 29pt;
+    color: #FFFF00;
+    font-family: Arial;
+}
+
+div#history-wrapper p {
+    padding-bottom: 30px;
+    font-size: 15pt;
+    font-family: Arial;
+}
+
+button#history-button {
+    position: relative;
+    left: 35%;
+    background-color: #58595B;
+    border-style: none;
+    margin: 2px 10px 0 10px;
+    border-radius: 5px;
+    font-size: 14pt;
+}
+
+table#history-table {
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+table#history-table, #history-table td, #history-table th {
+    text-align: center;
+    border: 2px solid #FFFF00;
+    font-size: 13pt;
+    font-family: Arial;
+}
+
+td.schedule-cell {
+    display: flex;
+    align-items: center;
+}

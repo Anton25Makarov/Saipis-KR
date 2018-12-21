@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <title>NFL</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link rel="shortcut icon" href="../resources/image/favicon.png">
+    <script src="script/jquery-1.10.2.js"></script>
+    <script src="script/backToTop.js" type="text/javascript"></script>
+    <script src="script/dynamic-section.js" type="text/javascript"></script>
+
+    <script data-main="script/config.js" src="script/require.js"></script>
+
+</head>
+<body onload="checkCookies()">
+<header>
+    <div id="logo">
+        <a href="/"><img src="../resources/image/main-logo-el-alt.png" width="65" height="65"></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="teams">Команды</a></li>
+            <li><a href="players">Игроки</a></li>
+            <li><a href="history">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="error-wrapper">
+        <div class="error">
+            <%= message %>
+        </div>
+        <div class="invalid">
+            <!--dynamic content-->
+        </div>
+    </div>
+
+    <div id="auth-section">
+        <% if(currentUser) { %>
+            <nav>
+                <a class="dropdown-toggle" href="#" title="Menu"><span id="user"><%= currentUser %></span></a>
+                <ul class="dropdown">
+                    <li><a href="/schedule">Ближайшие матчи</a></li>
+                    <li><a href="/logout">Выйти</a></li>
+                </ul>
+            </nav>
+        <% } else { %>
+            <ul id="auth">
+                <li><a href="/signup" onclick="return makeSignUpSectionVisible()">Регистрация</a></li>
+                <li><a href="/login" onclick="return makeLogInSectionVisible()">Вход</a></li>
+            </ul>
+        <% } %>
+    </div>
+
+</header>
+
+<main>
+    <div id="list-wrapper">
+        <table>
+            <caption>Ближайшие матчи сезона 2017-2018</caption>
+            <tbody>
+            <tr>
+                <td>
+                    <img src="../resources/image/nflApp.jpg" width="70" class="masterTooltip">
+                </td>
+                <td class="schedule-cell">
+                    Лос Анджелес Рамс
+                    <img src="../resources/image/los%20angeles.jpg" width="50" class="masterTooltip">
+                    <svg height="100" width="40">
+                        <line x1="5" y1="50" x2="35" y2="50" style="stroke:rgb(227, 80, 0);stroke-width:4"/>
+                    </svg>
+                    <img src="../resources/image/Baltimore_Ravens_logo.png" width="50" class="masterTooltip">
+                    Балтимор Равенс
+                </td>
+                <td>
+                    16:30
+                </td>
+                <td>
+                    Сб, Дек 22
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../resources/image/nflDirectTV.png" width="70" class="masterTooltip">
+                </td>
+                <td class="schedule-cell">
+                    Питсбург
+                    <img src="../resources/image/pittsburg.png" width="70" class="masterTooltip">
+                    <svg height="100" width="40">
+                        <line x1="5" y1="50" x2="35" y2="50" style="stroke:rgb(227, 80, 0);stroke-width:4"/>
+                    </svg>
+                    <img src="../resources/image/Логотип_Сиэтл_Сихокс.png" width="70" class="masterTooltip">
+                    Сиэтл Сихокс
+                </td>
+                <td>
+                    18:20
+                </td>
+                <td>
+                    Сб, Дек 22
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../resources/image/nflApp.jpg" width="70" class="masterTooltip">
+                </td>
+                <td class="schedule-cell">
+                    Хьюстон Текхас
+                    <img src="../resources/image/houston.png" width="70" class="masterTooltip">
+                    <svg height="100" width="40">
+                        <line x1="5" y1="50" x2="35" y2="50" style="stroke:rgb(227, 80, 0);stroke-width:4"/>
+                    </svg>
+                    <img src="../resources/image/Minnesota_Vikings_Logo_2013.png" width="70" class="masterTooltip">
+                    Минисота Викинги
+                </td>
+                <td>
+                    22:00
+                </td>
+                <td>
+                    Сб, Дек 22
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../resources/image/nflYahoo.png" width="70" class="masterTooltip">
+                </td>
+                <td class="schedule-cell">
+                    Балтимор Равенс
+                    <img src="../resources/image/Baltimore_Ravens_logo.png" width="70" class="masterTooltip">
+                    <svg height="100" width="40">
+                        <line x1="5" y1="50" x2="35" y2="50" style="stroke:rgb(227, 80, 0);stroke-width:4"/>
+                    </svg>
+                    <img src="../resources/image/pittsburg.png" width="70" class="masterTooltip">
+                    Питсбург
+                </td>
+                <td>
+                    11:55
+                </td>
+                <td>
+                    Вс, Дек 23
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../resources/image/nflYahoo.png" width="70"  class="masterTooltip">
+                </td>
+                <td class="schedule-cell">
+                    Лос Анджелес Рамс
+                    <img src="../resources/image/los%20angeles.jpg" width="70" class="masterTooltip">
+                    <svg height="100" width="40">
+                        <line x1="5" y1="50" x2="35" y2="50" style="stroke:rgb(227, 80, 0);stroke-width:4"/>
+                    </svg>
+                    <img src="../resources/image/kansas.jpg" width="70" class="masterTooltip">
+                    Канзас Чиевс
+                </td>
+                <td>
+                    14:00
+                </td>
+                <td>
+                    Вс, Дек 23
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <title>NFL</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link rel="shortcut icon" href="../resources/image/favicon.png">
+    <script src="script/jquery-1.10.2.js"></script>
+    <script src="script/backToTop.js" type="text/javascript"></script>
+    <script src="script/dynamic-section.js" type="text/javascript"></script>
+
+    <script data-main="script/config.js" src="script/require.js"></script>
+
+</head>
+<body onload="checkCookies()">
+<header>
+    <div id="logo">
+        <a href="/"><img src="../resources/image/main-logo-el-alt.png" width="65" height="65"></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="teams">Команды</a></li>
+            <li><a href="players">Игроки</a></li>
+            <li><a href="history">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="error-wrapper">
+        <div class="error">
+            <%= message %>
+        </div>
+        <div class="invalid">
+            <!--dynamic content-->
+        </div>
+    </div>
+
+    <div id="auth-section">
+        <% if(currentUser) { %>
+            <nav>
+                <a class="dropdown-toggle" href="#" title="Menu"><span id="user"><%= currentUser %></span></a>
+                <ul class="dropdown">
+                    <li><a href="/schedule">Ближайшие матчи</a></li>
+                    <li><a href="/logout">Выйти</a></li>
+                </ul>
+            </nav>
+        <% } else { %>
+            <ul id="auth">
+                <li><a href="/signup" onclick="return makeSignUpSectionVisible()">Регистрация</a></li>
+                <li><a href="/login" onclick="return makeLogInSectionVisible()">Вход</a></li>
+            </ul>
+        <% } %>
+    </div>
+
+</header>
+
+<main>
+    <div id="list-wrapper" class="players">
+        <table>
+            <caption>Лучшие игроки сезона 2016-2017</caption>
+            <thead>
+            <th>
+                #
+            </th>
+            <th colspan="2">
+                Игрок
+            </th>
+            <th>
+                Команда
+            </th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    <img src="../resources/image/tomBrady.png" width="120">
+                </td>
+                <td>
+                    Том
+                    Брэди
+                </td>
+                <td>
+                    Нью-Ингленд Пэтриотс
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    <img src="../resources/image/von%20miller.jpg" width="120">
+                </td>
+                <td>
+                    Вон Миллер
+                </td>
+                <td>
+                    Денвер Бронкос
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    <img src="../resources/image/Julio%20jones.png" width="120">
+                </td>
+                <td>
+                    Джулио Джонс
+                </td>
+                <td>
+                    Атланта Фэлконс
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    <img src="../resources/image/antonioBrayn.jpg" width="120">
+                </td>
+                <td>
+                    Антонио Браун
+                </td>
+                <td>
+                    Питтсбург Стилерз
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    5
+                </td>
+                <td>
+                    <img src="../resources/image/KhailMack.jpg" width="120">
+                </td>
+                <td>
+                    Кхаил Мак
+                </td>
+                <td>
+                    Чикаго Беарз
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

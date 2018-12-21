@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>NFL</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link rel="shortcut icon" href="../resources/image/favicon.png">
+    <script src="script/jquery-1.10.2.js"></script>
+    <script src="script/backToTop.js" type="text/javascript"></script>
+    <script src="script/dynamic-section.js" type="text/javascript"></script>
+
+    <script data-main="script/config.js" src="script/require.js"></script>
+
+</head>
+<body onload="checkCookies()">
+<header>
+    <div id="logo">
+        <a href="/"><img src="../resources/image/main-logo-el-alt.png" width="65" height="65"></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="teams">Команды</a></li>
+            <li><a href="players">Игроки</a></li>
+            <li><a href="history">История</a></li>
+        </ul>
+    </nav>
+
+    <div class="error-wrapper">
+        <div class="error">
+            <%= message %>
+        </div>
+        <div class="invalid">
+            <!--dynamic content-->
+        </div>
+    </div>
+
+    <div id="auth-section">
+        <% if(currentUser) { %>
+            <nav>
+                <a class="dropdown-toggle" href="#" title="Menu"><span id="user"><%= currentUser %></span></a>
+                <ul class="dropdown">
+                    <li><a href="/schedule">Ближайшие матчи</a></li>
+                    <li><a href="/logout">Выйти</a></li>
+                </ul>
+            </nav>
+        <% } else { %>
+            <ul id="auth">
+                <li><a href="/signup" onclick="return makeSignUpSectionVisible()">Регистрация</a></li>
+                <li><a href="/login" onclick="return makeLogInSectionVisible()">Вход</a></li>
+            </ul>
+        <% } %>
+    </div>
+
+</header>
+
+<main>
+    <div id="list-wrapper">
+        <div class="conference">
+            <table>
+                <caption>Лидеры дивизионов</caption>
+                <tbody>
+                <tr>
+                    <td>
+                        <img src="../resources/image/kansas.jpg" width="100" class="masterTooltip"
+                             title="Канзас-Сити Чифс">
+                    </td>
+                    <td>
+                        Канзас-Сити Чифс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                            11 / 2
+                    </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/patriots.jpg" width="100" class="masterTooltip"
+                             title="Нью-Ингленд Пэтриотс">
+                    </td>
+                    <td>
+                        Нью-Ингленд Пэтриотс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        9 / 4
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/houston.png" width="100" class="masterTooltip"
+                             title="Хьюстон Тексанс">
+                    </td>
+                    <td>
+                        Хьюстон Тексанс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        9 / 4
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/pittsburg.png" width="100" class="masterTooltip"
+                             title="Питтсбург Стилерз">
+                    </td>
+                    <td>
+                        Питтсбург Стилерз
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        7 / 4
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/los%20angeles.jpg" width="100" class="masterTooltip"
+                             title="Лос-Анджелес Рэмс">
+                    </td>
+                    <td>
+                        Лос-Анджелес Рэмс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        11 / 2
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/new%20orlean.jpg" width="100" class="masterTooltip"
+                             title="Нью-Орлеан Сэйнтс">
+                    </td>
+                    <td>
+                        Нью-Орлеан Сэйнтс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        11 / 2
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/chicago.png" width="100" class="masterTooltip"
+                             title="Чикаго Беарз">
+                    </td>
+                    <td>
+                        Чикаго Беарз
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        9 / 4
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/dallas.jpg" width="100" class="masterTooltip"
+                             title="Даллас Ковбойз">
+                    </td>
+                    <td>
+                        Даллас Ковбойз
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        7 / 5
+                            </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <svg height="870" width="30">
+            <line x1="20" y1="5" x2="20" y2="875" style="stroke:rgb(227, 80, 0);stroke-width:2"/>
+        </svg>
+        <div class="conference">
+            <table>
+                <caption>Претендующие на Wild Card</caption>
+                <tbody>
+                <tr>
+                    <td>
+                        <img src="../resources/image/Baltimore_Ravens_logo.png" width="100" class="masterTooltip"
+                             title="Балтимор Рэйвенс">
+                    </td>
+                    <td>
+                        Балтимор Рэйвенс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        7 / 5
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/chargers.png" width="100" class="masterTooltip"
+                             title="Лос-Анджелес Чарджерс">
+                    </td>
+                    <td>
+                        Лос-Анджелес Чарджерс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        11 / 3
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/Minnesota_Vikings_Logo_2013.png" width="100" class="masterTooltip"
+                             title="Минисота Викингс">
+                    </td>
+                    <td>
+                        Минисота Викингс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        6 / 5
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../resources/image/Логотип_Сиэтл_Сихокс.png" width="100" class="masterTooltip"
+                             title="Сиэтл сихокс">
+                    </td>
+                    <td>
+                        Сиэтл сихокс
+                    </td>
+                    <td>
+                        <span title="Побед / Поражений" class="masterTooltip">
+                        8 / 5
+                            </span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
